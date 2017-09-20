@@ -1,0 +1,106 @@
+package com.firetoro.todaynews.model.response;
+
+import java.util.List;
+
+public class NewsResponse {
+
+    Integer loginStatus;
+    Integer totalNumber;
+    boolean hasMore;
+    String postContentHint;
+    Integer showEtStatus;
+    Integer feedFlag;
+    Integer actionToLastStick;
+    String message;
+    boolean hasMoreToRefresh;
+    DetailData details;
+    List<NewData> data;
+
+    public Integer getLoginStatus() {
+        return loginStatus;
+    }
+
+    public void setLoginStatus(Integer loginStatus) {
+        this.loginStatus = loginStatus;
+    }
+
+    public Integer getTotalNumber() {
+        return totalNumber;
+    }
+
+    public void setTotalNumber(Integer totalNumber) {
+        this.totalNumber = totalNumber;
+    }
+
+    public boolean isHasMore() {
+        return hasMore;
+    }
+
+    public void setHasMore(boolean hasMore) {
+        this.hasMore = hasMore;
+    }
+
+    public String getPostContentHint() {
+        return postContentHint;
+    }
+
+    public void setPostContentHint(String postContentHint) {
+        this.postContentHint = postContentHint;
+    }
+
+    public Integer getShowEtStatus() {
+        return showEtStatus;
+    }
+
+    public void setShowEtStatus(Integer showEtStatus) {
+        this.showEtStatus = showEtStatus;
+    }
+
+    public Integer getFeedFlag() {
+        return feedFlag;
+    }
+
+    public void setFeedFlag(Integer feedFlag) {
+        this.feedFlag = feedFlag;
+    }
+
+    public Integer getActionToLastStick() {
+        return actionToLastStick;
+    }
+
+    public void setActionToLastStick(Integer actionToLastStick) {
+        this.actionToLastStick = actionToLastStick;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public boolean isHasMoreToRefresh() {
+        return hasMoreToRefresh;
+    }
+
+    public void setHasMoreToRefresh(boolean hasMoreToRefresh) {
+        this.hasMoreToRefresh = hasMoreToRefresh;
+    }
+
+    public DetailData getDetails() {
+        return details;
+    }
+
+    public void setDetails(DetailData details) {
+        this.details = details;
+    }
+
+    public List<NewData> getData() {
+        return data;
+    }
+
+    public void setData(List<NewData> data) {
+        this.data = data;
+    }
+}
