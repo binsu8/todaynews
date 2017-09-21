@@ -4,17 +4,17 @@ import java.util.List;
 
 public class NewsResponse {
 
-    Integer loginStatus;
-    Integer totalNumber;
-    boolean hasMore;
-    String postContentHint;
-    Integer showEtStatus;
-    Integer feedFlag;
-    Integer actionToLastStick;
-    String message;
-    boolean hasMoreToRefresh;
-    DetailData details;
-    List<NewData> data;
+    private Integer loginStatus;
+    private Integer totalNumber;
+    private boolean hasMore;
+    private String postContentHint;
+    private Integer showEtStatus;
+    private Integer feedFlag;
+    private Integer actionToLastStick;
+    private String message;
+    private boolean hasMoreToRefresh;
+    private DetailData details;
+    private List<NewData> data;
 
     public Integer getLoginStatus() {
         return loginStatus;

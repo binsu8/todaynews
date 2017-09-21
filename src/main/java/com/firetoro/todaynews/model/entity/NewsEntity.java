@@ -3,6 +3,7 @@ package com.firetoro.todaynews.model.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.time.Instant;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
@@ -29,10 +30,13 @@ public class NewsEntity extends BaseEntity {
     private String sourceSite;
 
     @Column
-    private Integer channel;
+    private Integer category;
 
     @Column(name = "user_id")
     private Integer userId;
+
+    @Column(name = "news_time")
+    private Instant newsTime;
 
     @Column
     private Integer status;
@@ -86,12 +90,12 @@ public class NewsEntity extends BaseEntity {
         this.sourceSite = sourceSite;
     }
 
-    public Integer getChannel() {
-        return channel;
+    public Integer getCategory(){
+        return category;
     }
 
-    public void setChannel(Integer channel) {
-        this.channel = channel;
+    public void setCategory(Integer category) {
+        this.category = category;
     }
 
     public Integer getUserId() {
@@ -100,6 +104,14 @@ public class NewsEntity extends BaseEntity {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Instant getNewsTime() {
+        return newsTime;
+    }
+
+    public void setNewsTime(Instant newsTime) {
+        this.newsTime = newsTime;
     }
 
     public Integer getStatus() {

@@ -2,8 +2,8 @@ package com.firetoro.todaynews.model.response;
 
 public class NewData {
 
-    String content;
-    String code;
+    private String content;
+    private String code;
 
     public String getContent() {
         return content;

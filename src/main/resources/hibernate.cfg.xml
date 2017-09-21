@@ -17,6 +17,6 @@
     <mapping class="com.firetoro.todaynews.model.entity.NewsEntity"/>
     <mapping class="com.firetoro.todaynews.model.entity.CommentEntity"/>
       -->
-    <mapping package="com.firetoro.todaynews.model"/>
+    <mapping package="com.firetoro.todaynews.model.entity"/>
   </session-factory>
 </hibernate-configuration>

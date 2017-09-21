@@ -1,24 +1,24 @@
 package com.firetoro.todaynews.controller;
 
-import com.firetoro.todaynews.service.VideoService;
-import org.springframework.format.annotation.DateTimeFormat;
+import com.firetoro.todaynews.model.request.NewsRequest;
+import com.firetoro.todaynews.model.response.NewsResponse;
+import com.firetoro.todaynews.service.NewService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
-import java.time.LocalDate;
 
 @Controller
 public class NewController {
 
     @Resource
-    VideoService testService;
+    NewService newService;
 
 
     @RequestMapping(value = "/api/v1/newss")
     @ResponseBody
-    public String getNews(
+    public NewsResponse getNews(
             @RequestParam(value = "iid", required = false)  Integer iid,
             @RequestParam(value = "net", required = false)  String net, //网络类型
             @RequestParam(value = "appn", required = false) String appName, //app name
@@ -37,18 +37,41 @@ public class NewController {
             @RequestParam(value = "loc", required = false)  String location, //地域码
             @RequestParam(value = "ls", required = false)   String lbsStatus, //是否允许获取位置
             @RequestParam(value = "city", required = false) String city ) {
-        return "My testSpring";
+
+        NewsRequest newsRequst = new NewsRequest();
+        newsRequst.setIid(iid)
+                .setNet(net)
+                .setAppName(appName)
+                .setChannel(channel)
+                .setCa(ca)
+                .setOsVersion(osVersion)
+                .setDevicePlatform(devicePlatform)
+                .setIdfa(idfa)
+                .setImei(imei)
+                .setDeviceId(deviceId)
+                .setScreenWidh(screenWidh)
+                .setScreenHeight(screenHeight)
+                .setAppVersion(appVersion)
+                .setLbsStatus(lbsStatus)
+                .setLastRefresh(lastRefresh)
+                .setAction(action)
+                .setLocation(location)
+                .setLastRefresh(lastRefresh)
+                .setCity(city);
+
+
+        return newService.getNews(newsRequst);
     }
 
     @RequestMapping(value = "/api/v1/new")
     @ResponseBody
     public String getNew(){
-        return "My testSpring" + testService.test();
+        return "My testSpring";
     }
 
     @RequestMapping(value = "/api/v1/newsInfo")
     @ResponseBody
     public String getNewInfo(){
-        return "My testSpring" + testService.test();
+        return "My testSpring";
     }
 }

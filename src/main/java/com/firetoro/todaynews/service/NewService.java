@@ -1,7 +1,8 @@
 package com.firetoro.todaynews.service;
 
 import com.firetoro.todaynews.model.entity.NewsEntity;
-import com.firetoro.todaynews.response.NewsResponse;
+import com.firetoro.todaynews.model.request.NewsRequest;
+import com.firetoro.todaynews.model.response.NewsResponse;
 import com.google.common.collect.Iterables;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,11 @@ public class NewService {
         return ee;
     }
 
-    public NewsResponse getNews(){
+    public NewsResponse getNews(NewsRequest newsRequst){
+
+        NewsResponse newsResponse = new NewsResponse();
+
+        return newsResponse;
 
     }
 
