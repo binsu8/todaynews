@@ -118,14 +118,20 @@
       <artifactId>c3p0</artifactId>
       <version>0.9.5.2</version>
     </dependency>
-    <!--
-    冲突
     <dependency>
-      <groupId>org.glassfish</groupId>
-      <artifactId>javax.el</artifactId>
-      <version>3.0.1-b08</version>G
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.1</version>
     </dependency>
-    -->
+
+      <!--
+      冲突
+      <dependency>
+        <groupId>org.glassfish</groupId>
+        <artifactId>javax.el</artifactId>
+        <version>3.0.1-b08</version>G
+      </dependency>
+      -->
 
 
 

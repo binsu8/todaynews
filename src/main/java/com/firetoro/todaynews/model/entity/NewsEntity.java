@@ -18,7 +18,7 @@ public class NewsEntity extends BaseEntity {
     private String title;
 
     @Column
-    private String desc;
+    private String summary;
 
     @Column
     private String content;
@@ -35,8 +35,10 @@ public class NewsEntity extends BaseEntity {
     @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name = "news_time")
-    private Instant newsTime;
+
+
+    @Column(name = "publish_time")
+    private Instant publishTime;
 
     @Column
     private Integer status;
@@ -58,12 +60,12 @@ public class NewsEntity extends BaseEntity {
         this.title = title;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getContent() {
@@ -106,12 +108,12 @@ public class NewsEntity extends BaseEntity {
         this.userId = userId;
     }
 
-    public Instant getNewsTime() {
-        return newsTime;
+    public Instant getPublishTime() {
+        return publishTime;
     }
 
-    public void setNewsTime(Instant newsTime) {
-        this.newsTime = newsTime;
+    public void setPublishTime(Instant publishTime) {
+        this.publishTime = publishTime;
     }
 
     public Integer getStatus() {

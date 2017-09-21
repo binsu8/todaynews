@@ -2,8 +2,9 @@ package com.firetoro.todaynews.model.response;
 
 public class NewData {
 
-    private String content;
     private String code;
+
+    private String content;
 
     public String getContent() {
         return content;
@@ -20,4 +21,6 @@ public class NewData {
     public void setCode(String code) {
         this.code = code;
     }
+
+
 }

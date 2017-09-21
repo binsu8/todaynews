@@ -23,7 +23,7 @@ public class NewController {
             @RequestParam(value = "net", required = false)  String net, //网络类型
             @RequestParam(value = "appn", required = false) String appName, //app name
             @RequestParam(value = "ch", required = false)   String channel, //渠道
-            @RequestParam(value = "ca", required = false)   Integer ca, //分类
+            @RequestParam(value = "ca", required = false)   Integer category, //分类
             @RequestParam(value = "osv", required = false)  String osVersion, //操作系统版本
             @RequestParam(value = "dp", required = false)   String devicePlatform, //平台 phone
             @RequestParam(value = "idfa", required = false) String idfa, //
@@ -43,7 +43,7 @@ public class NewController {
                 .setNet(net)
                 .setAppName(appName)
                 .setChannel(channel)
-                .setCa(ca)
+                .setCategory(category)
                 .setOsVersion(osVersion)
                 .setDevicePlatform(devicePlatform)
                 .setIdfa(idfa)

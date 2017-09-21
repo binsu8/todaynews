@@ -2,8 +2,11 @@ package com.firetoro.todaynews.service;
 
 import com.firetoro.todaynews.model.entity.NewsEntity;
 import com.firetoro.todaynews.model.request.NewsRequest;
+import com.firetoro.todaynews.model.response.NewData;
 import com.firetoro.todaynews.model.response.NewsResponse;
+import com.firetoro.todaynews.constant.Constants;
 import com.google.common.collect.Iterables;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +49,35 @@ public class NewService {
     public NewsResponse getNews(NewsRequest newsRequst){
 
         NewsResponse newsResponse = new NewsResponse();
+
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+        CriteriaQuery<NewsEntity> query = builder.createQuery(NewsEntity.class);
+        Root<NewsEntity> newsEntityRoot = query.from(NewsEntity.class);
+
+        List<Predicate> predicates = new ArrayList<Predicate>();
+
+        predicates.add(builder.greaterThan(newsEntityRoot.get("created"), newsRequst.getLastRefresh()));
+
+        if(newsRequst.getCategory() != null && !newsRequst.getCategory().equals("")) {
+            predicates.add(builder.equal(newsEntityRoot.get("category"), newsRequst.getCategory()));
+
+        }
+
+        query.where(Iterables.toArray(predicates, Predicate.class));
+        query.orderBy(builder.asc(newsEntityRoot.get("created")));
+
+        List<NewsEntity> newsEntities = em.createQuery(query)
+                .setMaxResults(10)
+                .getResultList();
+
+        newsResponse.setStatus(Constants.STATUS.SUCCESS);
+
+        List<NewData> newDatas = new ArrayList<>();
+        newsResponse.setData(newDatas);
+        for(NewsEntity news : newsEntities) {
+            NewData newData = new NewData();
+            newData.setContent();
+        }
 
         return newsResponse;
 

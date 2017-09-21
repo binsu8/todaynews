@@ -6,7 +6,7 @@ public class NewsRequest {
     private String net; //网络类型
     private String appName; //app name
     private String channel; //渠道
-    private Integer ca; //分类
+    private Integer category; //分类
     private String osVersion; //操作系统版本
     private String devicePlatform; //平台 phone
     private String idfa; //
@@ -58,12 +58,12 @@ public class NewsRequest {
         return this;
     }
 
-    public Integer getCa() {
-        return ca;
+    public Integer getCategory() {
+        return category;
     }
 
-    public NewsRequest setCa(Integer ca) {
-        this.ca = ca;
+    public NewsRequest setCategory(Integer category) {
+        this.category = category;
         return this;
     }
 

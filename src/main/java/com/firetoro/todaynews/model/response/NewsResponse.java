@@ -11,10 +11,18 @@ public class NewsResponse {
     private Integer showEtStatus;
     private Integer feedFlag;
     private Integer actionToLastStick;
-    private String message;
+    private Integer status;
     private boolean hasMoreToRefresh;
     private DetailData details;
     private List<NewData> data;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Integer getLoginStatus() {
         return loginStatus;
@@ -70,14 +78,6 @@ public class NewsResponse {
 
     public void setActionToLastStick(Integer actionToLastStick) {
         this.actionToLastStick = actionToLastStick;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public boolean isHasMoreToRefresh() {
