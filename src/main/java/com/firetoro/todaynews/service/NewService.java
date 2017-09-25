@@ -2,7 +2,9 @@ package com.firetoro.todaynews.service;
 
 import com.firetoro.todaynews.model.entity.NewsEntity;
 import com.firetoro.todaynews.model.request.NewsRequest;
+import com.firetoro.todaynews.model.response.DetailData;
 import com.firetoro.todaynews.model.response.NewData;
+import com.firetoro.todaynews.model.response.News;
 import com.firetoro.todaynews.model.response.NewsResponse;
 import com.firetoro.todaynews.constant.Constants;
 import com.google.common.collect.Iterables;
@@ -50,6 +52,7 @@ public class NewService {
 
         NewsResponse newsResponse = new NewsResponse();
 
+        /*
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<NewsEntity> query = builder.createQuery(NewsEntity.class);
         Root<NewsEntity> newsEntityRoot = query.from(NewsEntity.class);
@@ -70,14 +73,42 @@ public class NewService {
                 .setMaxResults(10)
                 .getResultList();
 
+        */
         newsResponse.setStatus(Constants.STATUS.SUCCESS);
+
+        List<NewsEntity> newsEntities = new ArrayList<>();
 
         List<NewData> newDatas = new ArrayList<>();
         newsResponse.setData(newDatas);
-        for(NewsEntity news : newsEntities) {
+        for(NewsEntity newsEntity : newsEntities) {
             NewData newData = new NewData();
-            newData.setContent();
+            newData.setCode("");
+            News news = new News();
+            newData.setContent(news);
+            news.setArticleType(newsEntity.getArticleType());
+            news.setSummary(newsEntity.getSummary());
+
         }
+
+        newsResponse.setTotalNumber(newDatas.size());
+        newsResponse.setHasMore(false);
+        newsResponse.setLoginStatus(0);
+        newsResponse.setHasMoreToRefresh(true);
+        newsResponse.setActionToLastStick(1);
+        newsResponse.setFeedFlag(0);
+
+        DetailData detailData = new DetailData();
+
+        detailData.setType("app");
+        detailData.setDisplayDuration(2);
+        detailData.setDisplayhInfo("游戏头条有8条更新");
+        detailData.setDisplayTemplate("游戏头条有%s是更新");
+        detailData.setOpenUrl("");
+        detailData.setDownloadUrl("");
+        detailData.setAppName("游戏头条");
+        detailData.setPacakageName("fireToro");
+
+        newsResponse.setDetails(detailData);
 
         return newsResponse;
 

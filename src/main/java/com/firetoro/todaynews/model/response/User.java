@@ -1,6 +1,7 @@
 package com.firetoro.todaynews.model.response;
 
 public class User {
+
     private String verifiedContent;
     private String avatarUrl;
     private long userId;

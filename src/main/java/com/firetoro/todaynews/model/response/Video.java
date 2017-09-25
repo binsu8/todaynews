@@ -3,6 +3,7 @@ package com.firetoro.todaynews.model.response;
 import java.util.List;
 
 public class Video {
+
     private int groupFlags;
     private int videoType;
     private int videoPreloadingFlag;

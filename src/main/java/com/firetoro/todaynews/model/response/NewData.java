@@ -4,15 +4,8 @@ public class NewData {
 
     private String code;
 
-    private String content;
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
+    //private String content;
+    private News content;
 
     public String getCode() {
         return code;
@@ -20,6 +13,14 @@ public class NewData {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public News getContent() {
+        return content;
+    }
+
+    public void setContent(News content) {
+        this.content = content;
     }
 
 

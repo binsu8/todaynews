@@ -23,11 +23,14 @@ public class NewsEntity extends BaseEntity {
     @Column
     private String content;
 
+    @Column(name = "article_type")
+    private int articleType;
+
     @Column(name = "source_url")
     private String sourceUrl;
 
-    @Column(name = "source_site")
-    private String sourceSite;
+    @Column(name = "media_id")
+    private MediaEntity media;
 
     @Column
     private Integer category;
@@ -35,13 +38,14 @@ public class NewsEntity extends BaseEntity {
     @Column(name = "user_id")
     private Integer userId;
 
-
-
     @Column(name = "publish_time")
     private Instant publishTime;
 
     @Column
     private Integer status;
+
+    @Column
+    private String tag;
 
 
     public Integer getId() {
@@ -76,6 +80,14 @@ public class NewsEntity extends BaseEntity {
         this.content = content;
     }
 
+    public int getArticleType() {
+        return articleType;
+    }
+
+    public void setArticleType(int articleType) {
+        this.articleType = articleType;
+    }
+
     public String getSourceUrl() {
         return sourceUrl;
     }
@@ -84,15 +96,15 @@ public class NewsEntity extends BaseEntity {
         this.sourceUrl = sourceUrl;
     }
 
-    public String getSourceSite() {
-        return sourceSite;
+    public MediaEntity getMedia() {
+        return media;
     }
 
-    public void setSourceSite(String sourceSite) {
-        this.sourceSite = sourceSite;
+    public void setMedia(MediaEntity media) {
+        this.media = media;
     }
 
-    public Integer getCategory(){
+    public Integer getCategory() {
         return category;
     }
 
@@ -122,5 +134,13 @@ public class NewsEntity extends BaseEntity {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }
